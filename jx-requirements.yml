@@ -6,22 +6,20 @@ spec:
     schedule: ""
   cluster:
     chartRepository: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts
-    clusterName: kind
     devEnvApprovers:
     - todo
     environmentGitOwner: todo
     gitKind: github
     gitName: github
     gitServer: https://github.com
-    provider: kubernetes
-    registry: ghcr.io
+    provider: eks
   environments:
   - key: dev
   - key: staging
   - key: production
   ingress:
-    domain: ""
-    externalDNS: false
+    domain: "[env_name].cc.aitomatic.com"
+    externalDNS: true
     namespaceSubDomain: -jx.
     tls:
       email: ""
